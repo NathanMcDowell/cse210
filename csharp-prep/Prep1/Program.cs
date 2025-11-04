@@ -16,17 +16,5 @@ class Program
 
         Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
 
-        int x = 10;
-
-        if (!(x == 10 || x == 12 && x == 13 && x != 23))
-        {
-            Console.WriteLine("X == 10");
-        }
-        else if (x == 435)
-        {
-            Console.WriteLine("Hey Bob");
-        }
-
-        Console.WriteLine("X is who knows what?");
     }
 }
