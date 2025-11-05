@@ -24,15 +24,24 @@ class Program
         {
             Console.Write("Please enter your birth year: ");
             year = Convert.ToInt16(Console.ReadLine());
-            
+
+        }
+        static int SquareNumber(int number)
+        {
+            int sqrNumber = number * number;
+            return sqrNumber;
+        }
+        static void DisplayResult(string name, int number, int year)
+        {
+            Console.WriteLine($"{name}, your number squared is {number}.");
+            Console.WriteLine($"{name}, you will turn {2025 - year}");
         }
         DisplayWelcome();
-        // Console.WriteLine(PromptUserName());
-        // Console.WriteLine(PromptUserNumber());
+        string name = PromptUserName();
+        int number = SquareNumber(PromptUserNumber());
         int year;
         PromptUserBirthYear(out year);
-        Console.WriteLine(year);
-        
-        
+        DisplayResult(name, number, year);
+                
     }
 }
