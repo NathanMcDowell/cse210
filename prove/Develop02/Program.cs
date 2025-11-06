@@ -5,22 +5,37 @@ class Program
     static void Main(string[] args)
     {
         Menu journalMenu = new Menu();
+        
         int userSelection;
-        userSelection = journalMenu.ProcessMenu();
 
-        switch(userSelection)
+        bool done = false;
+
+        do
         {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-        }
+            userSelection = journalMenu.ProcessMenu();
+            switch (userSelection)
+            {
+                case 1:
+                // Create a new Entry Object
+                // Call creat an that object
+                // Add the entry to the journal
+                    break;
+                case 2:
+                // Call Journal.Display
+                    break;
+                case 3:
+                // Save to a file
+                    break;
+                case 4:
+                // Read from a file
+                    break;
+                case 5:
+                // Quit
+                    done = true;
+                    break;
+
+            }
+        } while (!done);
     }
 }
 
