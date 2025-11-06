@@ -21,8 +21,10 @@ class Program
         Resume resume1 = new Resume();
         resume1._jobs.Add(job1);
         resume1._jobs.Add(job2);
+        resume1._name = "Johnny Johnson";
 
-        Console.WriteLine(resume1._jobs[0]._jobTitle);
+        // Console.WriteLine(resume1._jobs[0]._jobTitle);
+        resume1.DisplayJobList();
         
     }
      
