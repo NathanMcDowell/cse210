@@ -4,25 +4,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        Menu journalMenu = new Menu();
+
+        journalMenu.ProcessMenu();
     }
 }
 
 /* 
 class Journal
 list of prompts
+List _entries: Entry
 
-
-AddEntry()
-DisplayAll()
-ReadFromFile()
-WriteToFile()
+AddEntry(): void
+DisplayAll(): void
+WriteToFile(): void
+ReadFromFile(): void
 
 class JournalEntry
 _date: string
 _prompt: string
 _userResponse: string
     Stores date and the user's input
-Display()
-SetInformation(string _date, string _prompt, string _userResponse)
+Display(): void
+CreateEntry(string _date, string _prompt, string _userResponse): void
+CreateEntry(): void
 */
