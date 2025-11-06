@@ -15,8 +15,15 @@ class Program
         job2._company = "Apple";
         job2._startYear = 2015;
         job2._endYear = 2022;
-        Console.WriteLine(job1._company);
-        Console.WriteLine(job2._company);
+
+        // job1.DisplayJobDetails();
+
+        Resume resume1 = new Resume();
+        resume1._jobs.Add(job1);
+        resume1._jobs.Add(job2);
+
+        Console.WriteLine(resume1._jobs[0]._jobTitle);
+        
     }
      
 }
