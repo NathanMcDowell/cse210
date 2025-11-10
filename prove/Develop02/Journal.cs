@@ -2,6 +2,7 @@
 class Journal
 {
     List<JournalEntry> _entries = new List<JournalEntry>();
+    
     public void Display()
     {
         foreach(JournalEntry entry in _entries)
@@ -13,9 +14,16 @@ class Journal
     {
         _entries.Add(entry);
     }
-    public void SaveToFile()
+    public void SaveToFile(string filename)
     {
-        
+        using (StreamWriter outputFile = new StreamWriter(filename))
+    {
+        foreach (JournalEntry entry in _entries)
+        {
+            // Write one line per entry, separating parts with '#'
+            outputFile.WriteLine($"{entry._date}#{entry._entryQuestion}#{entry._journalEntry}");
+        }
+    }
     }
     public void ReadFromFile(string filename)
     {

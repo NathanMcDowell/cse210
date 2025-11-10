@@ -29,10 +29,18 @@ class Program
                     journal.Display();
                     break;
                 case 3:
-                // Save to a file
+                    Console.Write("Enter filename to save to: ");
+                    string saveFile = Console.ReadLine();
+                    journal.SaveToFile(saveFile);
+                    Console.WriteLine("Journal saved successfully!");
                     break;
+
                 case 4:
-                // Read from a file
+                    // Read from a file
+                    Console.Write("Enter filename to load journal from: ");
+                    string loadFile = Console.ReadLine();
+                    journal.ReadFromFile(loadFile);
+                    Console.WriteLine("Journal loaded successfully!");
                     break;
                 case 5:
                 // Quit
