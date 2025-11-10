@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Menu journalMenu = new Menu();
+        Journal journal = new Journal();
         
         int userSelection;
 
@@ -22,9 +23,10 @@ class Program
                     JournalEntry journalEntry = new JournalEntry();
                     journalEntry.CreateJournalEntry();
                     journalEntry.Display();
+                    journal.AddEntry(journalEntry);
                     break;
                 case 2:
-                // Call Journal.Display
+                    journal.Display();
                     break;
                 case 3:
                 // Save to a file

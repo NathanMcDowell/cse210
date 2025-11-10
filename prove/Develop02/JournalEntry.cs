@@ -13,7 +13,8 @@ class JournalEntry
     {
         _date = "11/10/2025";
         _entryQuestion = "How are you doing?";
-        _journalEntry = "Fine";
+        Console.Write(_entryQuestion);
+        _journalEntry = Console.ReadLine();
             }
     public void CreateJournalEntry(string date, string prompt, string response)
     {
