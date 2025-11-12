@@ -6,13 +6,13 @@ class Circle
     {
         Console.WriteLine("Default");
         _radius = 0.0;
-    }    
+    }
 
     public Circle(double radius)
     {
         SetRadius(radius);
     }
-    
+
     public void SetRadius(double radius)
     {
         if (radius < 0)
@@ -28,6 +28,11 @@ class Circle
 
     public double GetCircleArea()
     {
-        return 3.1415 * _radius * _radius;
+        return Math.PI * _radius * _radius;
+    }
+    public double GetCircumference()
+    {
+        return 2 * Math.PI * _radius;
     }
 }
+
