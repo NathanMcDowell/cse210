@@ -13,4 +13,12 @@ class Word
     {
         Console.WriteLine(_word);
     }
+    public bool IsHidden()
+    {
+        return _isHidden;
+    }
+    public void HideWord()
+    {
+        _isHidden = true;
+    }
 }
