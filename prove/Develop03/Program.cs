@@ -12,5 +12,6 @@ class Program
         {
             Console.WriteLine("Word is hidden");
         }
+        myWord.DisplayWord();
     }
 }
