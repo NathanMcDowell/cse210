@@ -13,8 +13,14 @@ class Program
         bool running = true;
         do
         {
+            Console.WriteLine(); Console.WriteLine();
+
             scripture.Display();
-            Console.WriteLine();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine();
+            }
+            
             string input = Console.ReadLine();
             if (input != "")
             {
