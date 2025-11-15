@@ -35,7 +35,7 @@ class Scripture
             word.DisplayWord();
         }
     }
-    public void HideWords()
+    public bool HideWords()
     {
         Random random = new Random();
         int index;
@@ -49,10 +49,10 @@ class Scripture
                 {
                     word.Hide();
                 }
-                break;
+                return false;
             }
 
-            index = random.Next(1, _words.Count);
+            index = random.Next(0, _words.Count);
             if (!_words[index].IsHidden())
             {
                 _words[index].Hide();
@@ -68,5 +68,6 @@ class Scripture
             }
 
         }
+        return true;
     }
 }
