@@ -6,12 +6,13 @@ class Program
     {
         Console.WriteLine("Hello Develop03 World!");
         Word myWord = new Word("Dude");
-        myWord.DisplayWord();
-        myWord.HideWord();
-        if (myWord.IsHidden())
-        {
-            Console.WriteLine("Word is hidden");
-        }
-        myWord.DisplayWord();
+
+        Reference reference = new Reference("1 Nephi", 10, "4", "6");
+        string scriptureText = @"Brethren, shall we not go on in so great a cause? Go forward and not backward. Courage, brethren; and on, on to the victory! Let your hearts rejoice, and be exceedingly glad. Let the earth break forth into singing. Let the dead speak forth anthems of eternal praise to the King Immanuel, who hath ordained, before the world was, that which would enable us to redeem them out of their prison; for the prisoners shall go free.";
+
+        Scripture scripture = new Scripture("1 Nephi", 10, "4", "6", scriptureText);
+        Console.WriteLine("scripture initialized");
+        scripture.Display();
+        
     }
 }

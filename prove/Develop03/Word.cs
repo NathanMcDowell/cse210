@@ -11,7 +11,7 @@ class Word
     }
     public void DisplayWord()
     {
-        Console.WriteLine(LocalGetWordString());
+        Console.Write($"{LocalGetWordString()} ");
     }
     public bool IsHidden()
     {
