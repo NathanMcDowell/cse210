@@ -37,9 +37,18 @@ class Scripture
     }
     public void HideWords()
     {
-        for (int i = 0; i < 3; i++)
+        Random random = new Random();
+        int index;
+        int i = 0;
+        while (i < 3)
         {
-            Console.WriteLine("Hiding one word");
+            index = random.Next(1, _words.Count);
+            if (!_words[index].IsHidden())
+            {
+                _words[index].Hide();
+                i++;
+            }
+
         }
     }
 }
