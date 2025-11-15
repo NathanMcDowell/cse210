@@ -9,7 +9,18 @@ class Program
 
         Scripture scripture = new Scripture("Doctrine and Covenants", 128, 22, scriptureText);
         Console.WriteLine("scripture initialized");
-        scripture.Display();
+        scripture.HideWords();
+        // bool running = true;
+        // do
+        // {
+        //     scripture.Display();
+        //     string input = Console.ReadLine();
+        //     if (input != "")
+        //     {
+        //         running = false;
+        //     }
+            
+        // } while (running);
         
     }
 }

@@ -17,7 +17,7 @@ class Word
     {
         return _isHidden;
     }
-    public void HideWord()
+    public void Hide()
     {
         _isHidden = true;
     }

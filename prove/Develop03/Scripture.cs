@@ -30,9 +30,16 @@ class Scripture
     public void Display()
     {
         _reference.Display();
-        foreach(Word word in _words)
+        foreach (Word word in _words)
         {
             word.DisplayWord();
+        }
+    }
+    public void HideWords()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine("Hiding one word");
         }
     }
 }
