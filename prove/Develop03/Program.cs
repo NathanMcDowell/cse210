@@ -14,6 +14,7 @@ class Program
         do
         {
             scripture.Display();
+            Console.WriteLine();
             string input = Console.ReadLine();
             if (input != "")
             {
