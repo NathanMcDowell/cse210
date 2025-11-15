@@ -5,11 +5,17 @@ class Reference
     private int _chapter;
     private string _verses;
 
-    public Reference(string bookName, int chapter, string startVerse, string endVerse)
+    public Reference(string bookName, int chapter, int startVerse, int endVerse)
     {
         _bookName = bookName;
         _chapter = chapter;
         _verses = startVerse + "-" + endVerse;
+    }
+    public Reference(string bookName, int chapter, int startVerse)
+    {
+        _bookName = bookName;
+        _chapter = chapter;
+        _verses = startVerse.ToString();
     }
     public void Display()
     {
