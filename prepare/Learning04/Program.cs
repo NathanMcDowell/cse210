@@ -6,7 +6,9 @@ class Program
     {
         Console.WriteLine("Hello Learning04 World!");
 
-        Assignment assignment = new Assignment("John", "Math");
-        Console.WriteLine(assignment.GetSummary());
+        MathAssignment assignment = new MathAssignment("John", "Math", "Section 5", "Problems 9-15");
+        Console.WriteLine(assignment.GetHomeworkList());
+        WritingAssignment assignment2 = new WritingAssignment("Steven", "Average English", "The Okay Gatsby");
+        Console.WriteLine(assignment2.GetWritingInformation());
     }
 }
