@@ -6,7 +6,7 @@ class Program
     {
         Console.WriteLine("Hello Develop04 World!");
 
-        Activity activity = new("Super Duper", "A really cool activity");
+        BreathingActivity breathingActivity = new("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
 
         int response = 0;
         while (response != 4)
@@ -20,8 +20,7 @@ class Program
             
             if (response == 1)
             {
-               activity.DisplayGreeting();
-               activity.DisplayDescription();
+               breathingActivity.RunActivity();
             }
         }
     }
