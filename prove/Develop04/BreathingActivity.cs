@@ -7,15 +7,24 @@ class BreathingActivity : Activity
 
     public void RunActivity()
     {
+        Console.Clear();
         DisplayGreeting();
         DisplayDescription();
         DateTime endTime = ObtainDuration();
-        RunCountDown("Get ready...", 5);
-        
+
+        Console.Clear();
+        RunCountDown("Get ready... ", 5);
+
+        Console.Clear();
         while(DateTime.Now < endTime)
         {
-            RunCountDown("Breath in", 5);
-            RunCountDown("Breath out", 5);
+            RunCountDown("Breath in ", 4);
+            Console.Clear();
+            RunCountDown("Breath out ", 6);
+            Console.Clear();
         }
+        Console.Clear();
+        DisplayEnding();
+        DisplaySpinner("\\|/-", 5);
     }
 }

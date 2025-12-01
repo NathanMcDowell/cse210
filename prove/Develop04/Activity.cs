@@ -25,25 +25,37 @@ class Activity
     }
     public void RunCountDown(string message, int seconds)
     {
-        Console.WriteLine(message);
+         Console.CursorVisible = false;
+        Console.Write(message);
         
         DateTime currentTime = DateTime.Now;
         DateTime endTime = currentTime.AddSeconds(seconds);
+        int count = seconds;
+        while(DateTime.Now < endTime)
+        {
+            Console.Write(count--);
+            Thread.Sleep(1000);
+            if (count >= 9)
+                Console.Write("\b\b  \b\b");
+            else
+                Console.Write("\b");
+        }
         
-        Console.CursorVisible = false;
-        DisplaySpinner("\\|/-", endTime);
         Console.CursorVisible = true;
     }
-    public void DisplaySpinner(string animation, DateTime endTime)
+    public void DisplaySpinner(string animation, int seconds)
     {
+        Console.CursorVisible = false;
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(seconds);
         int index = 0;
         while(DateTime.Now < endTime)
         {
         Console.Write(animation[index++ % animation.Length]);
-        Thread.Sleep(50);
+        Thread.Sleep(100);
         Console.Write("\b");
         }
-        
+        Console.CursorVisible = true;
         
     }
     public void StartTimer()
