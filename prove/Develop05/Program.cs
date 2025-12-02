@@ -3,8 +3,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Menu journalMenu = new Menu();
-        
+        Menu journalMenu = new();
+        UserData userData = new();
         string userSelection;
 
         bool done = false;
@@ -19,7 +19,8 @@ class Program
                     // Call create an that object
                     // Add the entry to the journal
                     Goal goal = new("Don't die", "It is a good idea", 100000);
-                    goal.DisplayGoal();
+                    userData.AddEntry(goal);
+                    userData.Display();
                     break;
                 case "2":
                     
