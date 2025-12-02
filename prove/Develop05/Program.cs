@@ -18,7 +18,9 @@ class Program
                     // Create a new Entry Object
                     // Call create an that object
                     // Add the entry to the journal
-                    Goal goal = new("Don't die", "It is a good idea", 100000);
+                    // Goal goal = new("Don't die", "It is a good idea", 100000);
+                    Goal goal = new();
+                    
                     userData.AddEntry(goal);
                     userData.Display();
                     break;
