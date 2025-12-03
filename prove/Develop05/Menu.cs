@@ -18,7 +18,6 @@ class Menu
     public string ProcessMenu()
     {
         string userSelection;
-        Console.Clear();
         foreach (string menuItem in _menuStrings)
         {
             Console.WriteLine(menuItem);

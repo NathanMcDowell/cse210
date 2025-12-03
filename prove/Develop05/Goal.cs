@@ -22,7 +22,12 @@ class Goal
     }
     public string DisplayGoal()
     {
-        return $"{_name}: {_description}, {_pointValue} points";
+        string completionIndicator = "";
+        if (_isComplete == true)
+        {
+            completionIndicator = "X";
+        }
+        return $"[{completionIndicator}] {_name}: {_description}, {_pointValue} points";
     }
     public string CreateFileSystemString()
     {
@@ -34,6 +39,10 @@ class Goal
     {
         return _isComplete;
     }
+    public void SetIsComplete(bool value)
+    {
+        _isComplete = value;
+    }
     public int GetPointValue()
     {
         return _pointValue;
@@ -41,5 +50,7 @@ class Goal
     virtual public void RecordEvent(UserData userData)
     {
         userData.AddPoints(_pointValue);
+        SetIsComplete(true);
+        // Console.WriteLine("base goal record event done");
     }
 }

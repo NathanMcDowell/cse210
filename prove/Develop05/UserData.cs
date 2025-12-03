@@ -6,6 +6,7 @@ class UserData
     public void Display()
     {
         int count = 1;
+        Console.WriteLine();
         foreach(Goal goal in _goals)
         {
             Console.WriteLine($"{count}. {goal.DisplayGoal()}");
