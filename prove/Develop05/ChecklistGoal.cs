@@ -21,4 +21,20 @@ class ChecklistGoal : Goal
     {
         return $"{base.DisplayGoal()}, {_currentReps}/{_repGoal} to earn {_bonusPoints} bonus points";
     }
+    public override void RecordEvent(UserData userData)
+    {
+        base.RecordEvent(userData);
+        _currentReps++;
+        if (_currentReps == _repGoal)
+        {
+            userData.AddPoints(_bonusPoints);
+        }
+        if(_currentReps >= _repGoal)
+        {
+            SetIsComplete(true);
+        } else
+        {
+            SetIsComplete(false);
+        }
+    }
 }
