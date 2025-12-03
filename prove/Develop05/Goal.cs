@@ -5,6 +5,12 @@ class Goal
     private int _pointValue;
     private bool _isComplete = false;
 
+    public Goal(string name, string description, int pointValue)
+    {
+        _name = name;
+        _description = description;
+        _pointValue = pointValue;
+    }
     public Goal()
     {
         Console.WriteLine("Goal Name: ");
@@ -14,9 +20,9 @@ class Goal
         Console.WriteLine("Point Value");
         _pointValue = int.Parse(Console.ReadLine());
     }
-    public void DisplayGoal()
+    public string DisplayGoal()
     {
-        Console.WriteLine($"{_name}: {_description}, {_pointValue} points");
+        return $"{_name}: {_description}, {_pointValue} points";
     }
     public string CreateFileSystemString()
     {

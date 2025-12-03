@@ -6,9 +6,15 @@ class Program
         Menu goalMenu = new();
         UserData userData = new();
         string userSelection;
-        string goalSelection;
+        string goalTypeSelection;
+        int goalSelection;
         bool done = false;
 
+
+        Goal testSimpleGoal = new("s1", "des1", 100);
+        userData.AddEntry(testSimpleGoal);
+        Goal testSimpleGoal2 = new("s2", "des2", 120);
+        userData.AddEntry(testSimpleGoal2);
         do
         {
             userSelection = goalMenu.ProcessMenu();
@@ -19,9 +25,9 @@ class Program
                     Console.WriteLine("1. Simple Goal");
                     Console.WriteLine("2. Eternal Goal");
                     Console.WriteLine("3. Checklist Goal");
-                    goalSelection = Console.ReadLine();
+                    goalTypeSelection = Console.ReadLine();
                     Console.Clear();
-                    switch (goalSelection)
+                    switch (goalTypeSelection)
                     {
                         case "1":
                             SimpleGoal goal = new();
@@ -46,6 +52,7 @@ class Program
                     break;
                 case "2":
                     userData.Display();
+                    
                     break;
                 case "3":
                     Console.Write("Enter filename to save to: ");
@@ -62,7 +69,13 @@ class Program
                     Console.WriteLine("Journal loaded successfully!");
                     break;
                 case "5":
-                // Quit
+                    userData.Display();
+                    Console.Write("Which goal did you complete? ");
+                    goalSelection = int.Parse(Console.ReadLine());
+                    userData.GetGoalList()[goalSelection - 1].RecordEvent(userData);
+                    break;
+                case "6":
+                    // Quit
                     done = true;
                     break;
                 default:

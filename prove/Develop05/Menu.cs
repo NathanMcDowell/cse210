@@ -8,7 +8,8 @@ class Menu
         "2 - Display List Goals",
         "3 - Save Journal to File",
         "4 - Read Journal from File",
-        "5 - Quit"
+        "5 - Complete Goal",
+        "6 - Quit"
     };
 
     /* Process Menu will display the menu to the user and read and validate the unput
@@ -17,6 +18,7 @@ class Menu
     public string ProcessMenu()
     {
         string userSelection;
+        Console.Clear();
         foreach (string menuItem in _menuStrings)
         {
             Console.WriteLine(menuItem);

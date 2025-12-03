@@ -5,11 +5,15 @@ class UserData
     
     public void Display()
     {
+        int count = 1;
         foreach(Goal goal in _goals)
         {
-            goal.DisplayGoal();
+            Console.WriteLine($"{count}. {goal.DisplayGoal()}");
+            count++;
         }
+        Console.WriteLine();
         Console.WriteLine($"Total Points: {_totalPoints}");
+        Console.WriteLine();
     }
     public void AddEntry(Goal goal)
     {
@@ -18,6 +22,10 @@ class UserData
     public void AddPoints(int points)
     {
         _totalPoints += points;
+    }
+    public List<Goal> GetGoalList()
+    {
+        return _goals;
     }
     public void SaveToFile(string filename)
     {
