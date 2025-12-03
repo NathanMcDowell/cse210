@@ -15,6 +15,8 @@ class Program
         userData.AddEntry(testSimpleGoal);
         EternalGoal testEternalGoal = new("e2", "des2", 120);
         userData.AddEntry(testEternalGoal);
+        ChecklistGoal testChecklistGoal = new("c3", "yadayada", 7, 3, 8);
+        userData.AddEntry(testChecklistGoal);
         do
         {
             userSelection = goalMenu.ProcessMenu();

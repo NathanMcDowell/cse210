@@ -20,7 +20,7 @@ class Goal
         Console.WriteLine("Point Value");
         _pointValue = int.Parse(Console.ReadLine());
     }
-    public string DisplayGoal()
+    virtual public string DisplayGoal()
     {
         string completionIndicator = "";
         if (_isComplete == true)
