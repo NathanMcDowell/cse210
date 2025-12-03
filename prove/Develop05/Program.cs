@@ -3,29 +3,49 @@ class Program
 {
     static void Main(string[] args)
     {
-        Menu journalMenu = new();
+        Menu goalMenu = new();
         UserData userData = new();
         string userSelection;
-
+        string goalSelection;
         bool done = false;
 
         do
         {
-            userSelection = journalMenu.ProcessMenu();
+            userSelection = goalMenu.ProcessMenu();
+            Console.Clear();
             switch (userSelection)
             {
                 case "1":
-                    // Create a new Entry Object
-                    // Call create an that object
-                    // Add the entry to the journal
-                    // Goal goal = new("Don't die", "It is a good idea", 100000);
-                    Goal goal = new();
+                    Console.WriteLine("1. Simple Goal");
+                    Console.WriteLine("2. Eternal Goal");
+                    Console.WriteLine("3. Checklist Goal");
+                    goalSelection = Console.ReadLine();
+                    Console.Clear();
+                    switch (goalSelection)
+                    {
+                        case "1":
+                            SimpleGoal goal = new();
+                            userData.AddEntry(goal);
+                            goal.RecordEvent(userData);
+                            
+                            break;
+                        case "2":
+                            
+                            break;
+
+                        case "3":
+
+                            break;
+
+                        default:
+
+                            break;
+                    }
                     
-                    userData.AddEntry(goal);
-                    userData.Display();
+                    
                     break;
                 case "2":
-                    
+                    userData.Display();
                     break;
                 case "3":
                     Console.Write("Enter filename to save to: ");

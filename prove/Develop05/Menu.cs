@@ -3,7 +3,6 @@ class Menu
 {
     public string[] _menuStrings =
     {
-        
         "You can create, display, save, and read goals",
         "1 - Create Goal",
         "2 - Display List Goals",

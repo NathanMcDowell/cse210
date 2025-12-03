@@ -1,6 +1,7 @@
 class UserData
 {
-    List<Goal> _goals = [];
+    private List<Goal> _goals = [];
+    private int _totalPoints = 0;
     
     public void Display()
     {
@@ -8,10 +9,15 @@ class UserData
         {
             goal.DisplayGoal();
         }
+        Console.WriteLine($"Total Points: {_totalPoints}");
     }
     public void AddEntry(Goal goal)
     {
         _goals.Add(goal);
+    }
+    public void AddPoints(int points)
+    {
+        _totalPoints += points;
     }
     public void SaveToFile(string filename)
     {
