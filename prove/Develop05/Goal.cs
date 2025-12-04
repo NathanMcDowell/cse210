@@ -3,13 +3,14 @@ class Goal
     private string _name;
     private string _description;
     private int _pointValue;
-    private bool _isComplete = false;
+    private bool _isComplete;
 
-    public Goal(string name, string description, int pointValue)
+    public Goal(string name, string description, int pointValue, bool isComplete)
     {
         _name = name;
         _description = description;
         _pointValue = pointValue;
+        _isComplete = isComplete;
     }
     public Goal()
     {
@@ -19,6 +20,7 @@ class Goal
         _description = Console.ReadLine();
         Console.WriteLine("Point Value");
         _pointValue = int.Parse(Console.ReadLine());
+        _isComplete = false;
     }
     virtual public string DisplayGoal()
     {
@@ -29,10 +31,10 @@ class Goal
         }
         return $"[{completionIndicator}] {_name}: {_description}, {_pointValue} points";
     }
-    public string CreateFileSystemString()
+    virtual public string CreateFileSystemString()
     {
-        string outputString = "";
-        outputString = $"{_name}#{_description}#{_pointValue}";
+        string outputString;
+        outputString = $"{_name}#{_description}#{_pointValue}#{_isComplete}";
         return outputString;
     }
     virtual public bool IsComplete()

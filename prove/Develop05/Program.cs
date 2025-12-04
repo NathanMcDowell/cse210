@@ -11,11 +11,11 @@ class Program
         bool done = false;
 
 
-        SimpleGoal testSimpleGoal = new("s1", "des1", 100);
+        SimpleGoal testSimpleGoal = new("s1", "des1", 100, false);
         userData.AddEntry(testSimpleGoal);
-        EternalGoal testEternalGoal = new("e2", "des2", 120);
+        EternalGoal testEternalGoal = new("e2", "des2", 120, false);
         userData.AddEntry(testEternalGoal);
-        ChecklistGoal testChecklistGoal = new("c3", "yadayada", 7, 3, 8);
+        ChecklistGoal testChecklistGoal = new("c3", "yadayada", 7, false, 3, 8);
         userData.AddEntry(testChecklistGoal);
         do
         {
@@ -61,15 +61,15 @@ class Program
                 case "3":
                     Console.Write("Enter filename to save to: ");
                     string saveFile = Console.ReadLine();
-                    //.SaveToFile(saveFile);
-                    Console.WriteLine("Journal saved successfully!");
+                    userData.SaveToFile(saveFile);
+                    Console.WriteLine("Goals saved successfully!");
                     break;
                 // Read from a file
                 case "4":
                     Console.Write("Enter filename to load journal from: ");
                     string loadFile = Console.ReadLine();
                     //.ReadFromFile(loadFile);
-                    Console.WriteLine("Journal loaded successfully!");
+                    Console.WriteLine("Goals loaded successfully!");
                     break;
                 // Complete a goal
                 case "5":

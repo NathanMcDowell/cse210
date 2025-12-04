@@ -11,11 +11,12 @@ class ChecklistGoal : Goal
         _bonusPoints = int.Parse(Console.ReadLine());
         
     }
-    public ChecklistGoal(string name, string description, int pointValue, int repGoal, int bonusPoints) 
-    : base(name, description, pointValue)
+    public ChecklistGoal(string name, string description, int pointValue, bool isComplete, int repGoal,  int bonusPoints, int currentReps = 0) 
+    : base(name, description, pointValue, isComplete)
     {
         _repGoal = repGoal;
         _bonusPoints = bonusPoints;
+        _currentReps = currentReps;
     }
     public override string DisplayGoal()
     {
@@ -36,5 +37,9 @@ class ChecklistGoal : Goal
         {
             SetIsComplete(false);
         }
+    }
+    public override string CreateFileSystemString()
+    {
+        return $"ChecklistGoal#{base.CreateFileSystemString()}#{_currentReps}#{_repGoal}#{_bonusPoints}#{_currentReps}";
     }
 }
