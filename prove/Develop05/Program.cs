@@ -11,12 +11,12 @@ class Program
         bool done = false;
 
 
-        SimpleGoal testSimpleGoal = new("s1", "des1", 100, false);
-        userData.AddEntry(testSimpleGoal);
-        EternalGoal testEternalGoal = new("e2", "des2", 120, false);
-        userData.AddEntry(testEternalGoal);
-        ChecklistGoal testChecklistGoal = new("c3", "yadayada", 7, false, 3, 8);
-        userData.AddEntry(testChecklistGoal);
+        // SimpleGoal testSimpleGoal = new("s1", "des1", 100, false);
+        // userData.AddEntry(testSimpleGoal);
+        // EternalGoal testEternalGoal = new("e2", "des2", 120, false);
+        // userData.AddEntry(testEternalGoal);
+        // ChecklistGoal testChecklistGoal = new("c3", "yadayada", 7, false, 3, 8);
+        // userData.AddEntry(testChecklistGoal);
         do
         {
             userSelection = goalMenu.ProcessMenu();
@@ -34,18 +34,16 @@ class Program
                     {
                         // Create a simple goal
                         case "1":
-                            SimpleGoal goal = new();
-                            userData.AddEntry(goal);
+                            userData.AddEntry("SimpleGoal");
                             break;
                         // Create an eternal goal
                         case "2":
-                            
+                            userData.AddEntry("EternalGoal");
                             break;
                         // Create a checklist goal
                         case "3":
-
+                            userData.AddEntry("ChecklistGoal");
                             break;
-
                         default:
                             break;
                     }

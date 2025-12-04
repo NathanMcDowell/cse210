@@ -20,6 +20,22 @@ class UserData
     {
         _goals.Add(goal);
     }
+    public void AddEntry(string goaltype)
+    {
+        if (goaltype == "SimpleGoal")
+        {
+            SimpleGoal goal = new();
+            _goals.Add(goal);
+        } else if (goaltype == "EternalGoal")
+        {
+            EternalGoal goal = new();
+            _goals.Add(goal);
+        } else if (goaltype == "ChecklistGoal")
+        {
+            ChecklistGoal goal = new();
+            _goals.Add(goal);
+        }
+    }
     public void AddPoints(int points)
     {
         _totalPoints += points;
@@ -78,9 +94,7 @@ class UserData
                 ChecklistGoal goal = new(name, description, pointValue, isComplete, repGoal, bonusPoints, currentReps);
                 AddEntry(goal);
             }
-            // JournalEntry entry = new JournalEntry();
-            // entry.CreateJournalEntry(date, question, entryText);
-            // this.AddEntry(entry);
+
         }
     }
     

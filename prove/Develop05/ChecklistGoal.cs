@@ -3,7 +3,7 @@ class ChecklistGoal : Goal
     private int _repGoal;
     private int _currentReps = 0;
     private int _bonusPoints;
-    ChecklistGoal() : base()
+    public ChecklistGoal() : base()
     {
         Console.WriteLine("How many times should this goal be completed for a bonus? ");
         _repGoal = int.Parse(Console.ReadLine());

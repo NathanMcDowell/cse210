@@ -1,6 +1,6 @@
 class EternalGoal : Goal
 {
-    EternalGoal() : base(){}
+    public EternalGoal() : base(){}
     public EternalGoal(string name, string description, int pointValue, bool isComplete) 
     : base(name, description, pointValue, isComplete){}
     public override void RecordEvent(UserData userData)
