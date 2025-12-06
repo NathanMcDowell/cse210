@@ -1,0 +1,4 @@
+class Martial : Character
+{
+    
+}

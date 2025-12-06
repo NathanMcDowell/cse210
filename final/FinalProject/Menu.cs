@@ -1,14 +1,13 @@
-
 class Menu
 {
     public string[] _menuStrings =
     {
         "You can create, display, save, and read goals",
-        "1 - Create Goal",
-        "2 - Display List Goals",
-        "3 - Save Journal to File",
-        "4 - Read Journal from File",
-        "5 - Complete Goal",
+        "1 - Create Character",
+        "2 - Display Character Stats",
+        "3 - Display Character Inventory",
+        "4 - Update Inventory",
+        "5 - Deal Damage",
         "6 - Quit"
     };
 
