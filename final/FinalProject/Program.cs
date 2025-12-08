@@ -10,7 +10,7 @@ class Program
 
         characterList.AddCharacter(character);
         characterList.DisplayNames();
-        Console.WriteLine(character.GetGeneralStats());
+        Console.WriteLine(character.GetGeneralStats());     
 
         Menu menu = new();
         string userSelection = menu.ProcessMenu();

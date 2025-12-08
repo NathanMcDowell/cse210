@@ -6,7 +6,7 @@ class Character
     private int _currentHealth;
     private int _hitDieSize;
     private List<Item> _inventory;
-    private List<int> _abilityScores;
+    private List<int> _abilityScores = [];
     private List<int> _abilityMods;
     private string _armorType;
     private bool _usingShield;
@@ -21,18 +21,34 @@ class Character
         Console.Write("Max Health: ");
         _maxHealth = int.Parse(Console.ReadLine());
         _currentHealth = _maxHealth;
+        Console.WriteLine("Input your ability scores in this format:");
+        Console.WriteLine("Str, Dex, Con, Int, Wis, Cha");
+        string abilityScoreString = Console.ReadLine();
+        List<string> abilityScoreStringList = abilityScoreString.Split(", ").ToList();
+        foreach(string score in abilityScoreStringList)
+        {
+            _abilityScores.Add(int.Parse(score));
+        }
+        
     }
-    public Character(string name, string characterClass, int maxHealth)
+    public Character(string name, string characterClass, int maxHealth, List<int> abilityScores)
     {
         _name = name;
         _class = characterClass;
         _maxHealth = maxHealth;
         _currentHealth = maxHealth;
+        _abilityScores = abilityScores;
+        foreach(int score in _abilityScores)
+        {
+           Console.Write($"{score} "); 
+        }
+        
     }
 
     public string GetName(){return _name;}
     public string GetClass(){return _class;}
     public List<Item> GetInventory(){return _inventory;}
+    public List<int> GetAbilityScores(){return _abilityScores;}
     public string GetGeneralStats()
     {
         return $"{_name}, {_class}, {_currentHealth}/{_maxHealth} HP";

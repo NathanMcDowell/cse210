@@ -16,4 +16,8 @@ class Characters
     {
         _characterList.Add(character);
     }
+    public void NewCharacter()
+    {
+        
+    }
 }
