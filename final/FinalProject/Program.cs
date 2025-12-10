@@ -6,25 +6,58 @@ class Program
     {
         
         Characters characterList = new();
-        Character character = new();
+        List<string> classes = 
+        ["1 - Barbarian", 
+        "2 - Fighter", 
+        "3 - Cleric", 
+        "4 - Wizard"];
 
-        characterList.AddCharacter(character);
-        characterList.DisplayNames();
-        Console.WriteLine(character.GetGeneralStats());     
+        // Character character = new();
+        // characterList.AddCharacter(character);
+        // characterList.DisplayNames();
+        // Console.WriteLine(character.GetGeneralStats());     
 
         Menu menu = new();
-        string userSelection = menu.ProcessMenu();
+        string userSelection;
         do
         {
+            userSelection = menu.ProcessMenu();
             switch (userSelection)
             {
                 case "1":
                     Console.WriteLine("Create a Character");
+                    Console.WriteLine();
+                    foreach(string classOption in classes)
+                        {
+                            Console.WriteLine($"{classOption}");
+                        }
+                    Console.WriteLine("What class will your new character be?");
+                    userSelection = Console.ReadLine();
+                    switch (userSelection)
+                        {
+                            case "1":
+                                Console.WriteLine("brb");
+                                characterList.AddCharacter("Barbarian");
+                            break;
+                            case "2":
+                                characterList.AddCharacter("Fighter");
+                            break;
+                            case "3":
+                                characterList.AddCharacter("Cleric");
+                            break;
+                            case "4":
+                                characterList.AddCharacter("Wizard");
+                            break;
+                            default:
+                                Console.WriteLine("Give a proper input, please.");
+                                break;
+                        }
                     break;
                 case "2":
-                    
+                    characterList.DisplayCharacterList();
                     break;
                 case "3":
+                    characterList.DisplayNames();
 
                     break;
                 case "4":
