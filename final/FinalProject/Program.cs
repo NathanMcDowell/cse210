@@ -12,10 +12,10 @@ class Program
         "3 - Cleric", 
         "4 - Wizard"];
 
-        // Character character = new();
-        // characterList.AddCharacter(character);
-        // characterList.DisplayNames();
-        // Console.WriteLine(character.GetGeneralStats());     
+        Barbarian testBarbarian = new("John", "Barbarian", 30, [16,15,14,13,12,11], "Axe");
+        Item item = new("Cool Hat", 1);
+        testBarbarian.AddItem(item);
+        characterList.AddCharacter(testBarbarian); 
 
         Menu menu = new();
         string userSelection;
@@ -36,7 +36,6 @@ class Program
                     switch (userSelection)
                         {
                             case "1":
-                                Console.WriteLine("brb");
                                 characterList.AddCharacter("Barbarian");
                             break;
                             case "2":
@@ -58,7 +57,9 @@ class Program
                     break;
                 case "3":
                     characterList.DisplayNames();
-
+                    Console.Write("Who's inventory do you want to see? ");
+                    userSelection = Console.ReadLine();
+                    characterList.DisplayCharacterInventory(int.Parse(userSelection)-1);
                     break;
                 case "4":
 

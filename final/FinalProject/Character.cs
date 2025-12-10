@@ -5,7 +5,7 @@ class Character
     private int _maxHealth;
     private int _currentHealth;
     private int _hitDieSize;
-    private List<Item> _inventory;
+    private List<Item> _inventory = [];
     private List<int> _abilityScores = [];
     private List<int> _abilityMods;
     private string _armorType;
@@ -38,10 +38,10 @@ class Character
         _maxHealth = maxHealth;
         _currentHealth = maxHealth;
         _abilityScores = abilityScores;
-        foreach(int score in _abilityScores)
-        {
-           Console.Write($"{score} "); 
-        }
+        // foreach(int score in _abilityScores)
+        // {
+        //    Console.Write($"{score} "); 
+        // }
         
     }
 
@@ -49,13 +49,13 @@ class Character
     public string GetClass(){return _class;}
     public List<Item> GetInventory(){return _inventory;}
     public List<int> GetAbilityScores(){return _abilityScores;}
-    public string GetGeneralStats()
+    public virtual string GetGeneralStats()
     {
         return $"{_name}, {_class}, {_currentHealth}/{_maxHealth} HP";
     }
     public void AddItem(Item item)
     {
-        
+        _inventory.Add(item);
     }
     public void DealDamage(int damage)
     {

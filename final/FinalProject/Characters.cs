@@ -43,7 +43,26 @@ class Characters
     {
         foreach(Character character in _characterList)
         {
-            Console.WriteLine(character);
+            Console.WriteLine($"{character.GetGeneralStats()}");
+        }
+    }
+    public void DisplayCharacterInventory(int index)
+    {
+        int currentIndex = 0;
+        foreach(Character character in _characterList)
+        {
+            if (currentIndex == index)
+            {
+                List<Item> inventory = character.GetInventory();
+                foreach(Item item in inventory)
+                {
+                    Console.WriteLine(item.GetItem());
+                }
+
+            } else
+            {
+                currentIndex++;
+            }
         }
     }
 }

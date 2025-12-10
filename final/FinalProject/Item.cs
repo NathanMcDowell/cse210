@@ -12,4 +12,8 @@ class Item
     {
         _quantity += number;
     }
+    public string GetItem()
+    {
+        return $"{_quantity} {_name}";
+    }
 }
