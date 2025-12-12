@@ -16,7 +16,7 @@ class Character
     {
         Console.Write("Character name: ");
         _name = Console.ReadLine();
-        Console.Write("Class:");
+        Console.Write("Class: ");
         _class = Console.ReadLine();
         Console.Write("Max Health: ");
         _maxHealth = int.Parse(Console.ReadLine());

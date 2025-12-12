@@ -16,4 +16,8 @@ class Item
     {
         return $"{_quantity} {_name}";
     }
+    public string GetName()
+    {
+        return _name;
+    }
 }

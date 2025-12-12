@@ -21,10 +21,12 @@ class Program
         string userSelection;
         do
         {
+            Console.WriteLine();
             userSelection = menu.ProcessMenu();
             switch (userSelection)
             {
                 case "1":
+                    Console.Clear();
                     Console.WriteLine("Create a Character");
                     Console.WriteLine();
                     foreach(string classOption in classes)
@@ -53,16 +55,26 @@ class Program
                         }
                     break;
                 case "2":
+                    Console.Clear();
                     characterList.DisplayCharacterList();
                     break;
                 case "3":
+                    Console.Clear();
                     characterList.DisplayNames();
                     Console.Write("Who's inventory do you want to see? ");
                     userSelection = Console.ReadLine();
                     characterList.DisplayCharacterInventory(int.Parse(userSelection)-1);
                     break;
                 case "4":
-
+                    Console.Clear();
+                    characterList.DisplayNames();
+                    Console.Write("Who's inventory do you want to update? ");
+                    userSelection = Console.ReadLine();
+                    Console.Write("Item: ");
+                    string selectedItem = Console.ReadLine();
+                    Console.Write("Quantity: ");
+                    int selectedQuantity = int.Parse(Console.ReadLine());
+                    characterList.UpdateCharacterInventory(int.Parse(userSelection)-1, selectedItem, selectedQuantity);
                     break;
                 case "5":
 

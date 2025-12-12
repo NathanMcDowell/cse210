@@ -65,4 +65,23 @@ class Characters
             }
         }
     }
+    public void UpdateCharacterInventory(int index, string item, int quantity)
+    {
+        Character character = _characterList[index];
+        bool inInventory = false;
+        foreach(Item i in character.GetInventory())
+        {
+            if (i.GetName() == item)
+            {
+                inInventory = true;
+                i.ModifyQuantity(quantity);
+                break;
+            }
+        }
+        if (!inInventory)
+        {
+            Item newItem = new(item, quantity);
+            character.GetInventory().Add(newItem);
+        }
+    }
 }
