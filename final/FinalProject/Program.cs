@@ -25,7 +25,7 @@ class Program
             userSelection = menu.ProcessMenu();
             switch (userSelection)
             {
-                case "1":
+                case "1": // Create a new character
                     Console.Clear();
                     Console.WriteLine("Create a Character");
                     Console.WriteLine();
@@ -54,33 +54,29 @@ class Program
                                 break;
                         }
                     break;
-                case "2":
+                case "2": // Display List of Characters and their general stats
                     Console.Clear();
                     characterList.DisplayCharacterList();
                     break;
-                case "3":
+                case "3": // Display Character Inventory
                     Console.Clear();
-                    characterList.DisplayNames();
-                    Console.Write("Who's inventory do you want to see? ");
-                    userSelection = Console.ReadLine();
+                    userSelection = characterList.DisplayNames();
                     characterList.DisplayCharacterInventory(int.Parse(userSelection)-1);
                     break;
-                case "4":
+                case "4": // Add or remove from an inventory
                     Console.Clear();
-                    characterList.DisplayNames();
-                    Console.Write("Who's inventory do you want to update? ");
-                    userSelection = Console.ReadLine();
+                    userSelection = characterList.DisplayNames();
                     Console.Write("Item: ");
                     string selectedItem = Console.ReadLine();
                     Console.Write("Quantity: ");
                     int selectedQuantity = int.Parse(Console.ReadLine());
                     characterList.UpdateCharacterInventory(int.Parse(userSelection)-1, selectedItem, selectedQuantity);
                     break;
-                case "5":
+                case "5": // Deal damage to or heal a character
 
                     break;
-                case "6":
-
+                case "6": // Quit
+                    Console.WriteLine("Have a good day!");
                     break;
                 default:
                     Console.WriteLine("Give a proper input, please.");

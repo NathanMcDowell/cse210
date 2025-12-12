@@ -3,7 +3,7 @@ class Characters
     private List<Character> _characterList = [];
     
 
-    public void DisplayNames()
+    public string DisplayNames()
     {
         int count = 1;
         Console.WriteLine();
@@ -12,6 +12,9 @@ class Characters
             Console.WriteLine($"{count}. {character.GetName()} the {character.GetClass()}");
             count++;
         }
+        Console.WriteLine("Input a number: ");
+        string userSelection = Console.ReadLine();
+        return userSelection;
     }
     public void AddCharacter(Character character)
     {
@@ -48,6 +51,7 @@ class Characters
     }
     public void DisplayCharacterInventory(int index)
     {
+        
         int currentIndex = 0;
         foreach(Character character in _characterList)
         {
@@ -58,7 +62,7 @@ class Characters
                 {
                     Console.WriteLine(item.GetItem());
                 }
-
+                break;
             } else
             {
                 currentIndex++;

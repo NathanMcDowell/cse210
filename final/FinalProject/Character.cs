@@ -4,10 +4,10 @@ class Character
     private string _class;
     private int _maxHealth;
     private int _currentHealth;
-    private int _hitDieSize;
+    // private int _hitDieSize;
     private List<Item> _inventory = [];
     private List<int> _abilityScores = [];
-    private List<int> _abilityMods;
+    private List<int> _abilityMods = [];
     private string _armorType;
     private bool _usingShield;
     private int _armorClass;
@@ -29,6 +29,11 @@ class Character
         {
             _abilityScores.Add(int.Parse(score));
         }
+        foreach(int score in _abilityScores)
+        {
+            int mod = (score - 10) / 2;
+            _abilityMods.Add(mod);
+        }
         
     }
     public Character(string name, string characterClass, int maxHealth, List<int> abilityScores)
@@ -38,10 +43,11 @@ class Character
         _maxHealth = maxHealth;
         _currentHealth = maxHealth;
         _abilityScores = abilityScores;
-        // foreach(int score in _abilityScores)
-        // {
-        //    Console.Write($"{score} "); 
-        // }
+        foreach(int score in _abilityScores)
+        {
+            int mod = (score - 10) / 2;
+            _abilityMods.Add(mod);
+        }
         
     }
 
