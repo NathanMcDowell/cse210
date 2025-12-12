@@ -6,10 +6,11 @@ class Martial : Character
         Console.Write("Weapon: ");
         _weapon = Console.ReadLine();
     }
-    public Martial(string name, string characterClass, int maxHealth, List<int> abilityScores, string weapon) 
+    public Martial(string name, string characterClass, int maxHealth, List<int> abilityScores, string weapon, bool usingShield) 
     : base(name, characterClass, maxHealth, abilityScores)
     {
         _weapon = weapon;
+        SetUsingShield(usingShield);
     }
     public override string GetGeneralStats()
     {

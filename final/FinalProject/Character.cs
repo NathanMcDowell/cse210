@@ -9,7 +9,7 @@ class Character
     private List<int> _abilityScores = [];
     private List<int> _abilityMods = [];
     private string _armorType;
-    private bool _usingShield;
+    private bool _usingShield =  false;
     private int _armorClass;
 
     public Character()
@@ -55,6 +55,30 @@ class Character
     public string GetClass(){return _class;}
     public List<Item> GetInventory(){return _inventory;}
     public List<int> GetAbilityScores(){return _abilityScores;}
+    public List<int> GetAbilityMods(){return _abilityMods;}
+    public bool GetUsingShield(){return _usingShield;}
+    public int GetArmorClass(){return _armorClass;}
+
+    public void SetUsingShield(bool value)
+    {
+        _usingShield = value;
+    }
+    public bool UserSetUsingShield()
+    {
+        Console.WriteLine("Are you using a shield? (y/n)");
+        string usingShield = Console.ReadLine();
+        if (usingShield == "y")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public void SetArmorClass(int ac){_armorClass = ac;}
+
+
     public virtual string GetGeneralStats()
     {
         return $"{_name}, {_class}, {_currentHealth}/{_maxHealth} HP";

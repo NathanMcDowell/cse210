@@ -12,7 +12,7 @@ class Program
         "3 - Cleric", 
         "4 - Wizard"];
 
-        Barbarian testBarbarian = new("John", "Barbarian", 30, [16,15,14,13,12,11], "Axe");
+        Barbarian testBarbarian = new("John", "Barbarian", 30, [16,15,14,13,12,11], "Axe", true);
         Item item = new("Cool Hat", 1);
         testBarbarian.AddItem(item);
         characterList.AddCharacter(testBarbarian); 
