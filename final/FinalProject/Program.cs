@@ -13,10 +13,12 @@ class Program
         "4 - Wizard"];
 
         Barbarian testBarbarian = new("John", "Barbarian", 30, [16,15,14,13,12,11], "Axe", true);
+        Fighter testFighter = new("Frank", "Fighter", 25, [16,17,14,13,12,11], "Longsword", false, "Plate");
         Item item = new("Cool Hat", 1);
         testBarbarian.AddItem(item);
         characterList.AddCharacter(testBarbarian); 
-        Console.WriteLine(testBarbarian.ChooseArmorType().Value[0]);
+        characterList.AddCharacter(testFighter);
+        Console.WriteLine(testFighter.GetArmorClass());
         Menu menu = new();
         string userSelection;
         do

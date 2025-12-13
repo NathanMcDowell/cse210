@@ -11,6 +11,7 @@ class Barbarian : Martial
             shieldArmor = 2;
         }
         SetArmorClass(10 + dexMod + conMod + shieldArmor);
+        SetArmorType("Unarmored Defense");
     }
     public Barbarian(string name, string characterClass, int maxHealth, List<int> abilityScores, string weapon, bool usingShield) 
     : base(name, characterClass, maxHealth, abilityScores, weapon, usingShield)
@@ -23,5 +24,6 @@ class Barbarian : Martial
             shieldArmor = 2;
         }
         SetArmorClass(10 + dexMod + conMod + shieldArmor);
+        SetArmorType("Unarmored Defense");
     }
 }

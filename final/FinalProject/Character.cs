@@ -58,6 +58,7 @@ class Character
     public List<int> GetAbilityMods(){return _abilityMods;}
     public bool GetUsingShield(){return _usingShield;}
     public int GetArmorClass(){return _armorClass;}
+    public string GetArmorType(){return _armorType;}
 
     public void SetUsingShield(bool value)
     {
@@ -77,6 +78,7 @@ class Character
         }
     }
     public void SetArmorClass(int ac){_armorClass = ac;}
+    public void SetArmorType(string armorType){_armorType = armorType;}
 
 
     public virtual string GetGeneralStats()
@@ -136,5 +138,35 @@ class Character
         }
         return selectedArmor;
         
+    }
+    public KeyValuePair<string, List<int>> ChooseArmorType(string armorName)
+    {
+
+        Dictionary<string, List<int>> armorList = new()
+        {
+            ["Padded"] = [11, 10],
+            ["Leather"] = [11, 10],
+            ["Studded Leather"] = [12, 10],
+            ["Hide"] = [12, 2],
+            ["Chain Shirt"] = [13, 2],
+            ["Scale mail"] = [14, 2],
+            ["Breastplate"] = [14, 2],
+            ["Half plate"] = [15, 2],
+            ["Ring mail"] = [14, 0],
+            ["Chain mail"] = [16, 0],
+            ["Splint"] = [17, 0],
+            ["Plate"] = [18, 0]
+        };
+        KeyValuePair<string, List<int>> selectedArmor = new("No armor", [10, 10]);
+
+        foreach(KeyValuePair<string, List<int>> armor in armorList)
+        {
+            if(armor.Key == armorName)
+            {
+                selectedArmor = armor;
+            }
+        }
+
+        return selectedArmor;
     }
 }

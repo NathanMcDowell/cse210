@@ -46,7 +46,7 @@ class Characters
     {
         foreach(Character character in _characterList)
         {
-            Console.WriteLine($"{character.GetGeneralStats()} - AC: {character.GetArmorClass()} Shield: {character.GetUsingShield()}");
+            Console.WriteLine($"{character.GetGeneralStats()}, AC: {character.GetArmorClass()}, Shield: {character.GetUsingShield()}, Armor: {character.GetArmorType()}");
         }
     }
     public void DisplayCharacterInventory(int index)
