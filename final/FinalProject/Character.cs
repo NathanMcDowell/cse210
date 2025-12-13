@@ -95,4 +95,46 @@ class Character
             _currentHealth = 0;
         }
     }
+    public KeyValuePair<string, List<int>> ChooseArmorType()
+    {
+
+        Dictionary<string, List<int>> armorList = new()
+        {
+            ["Padded"] = [11, 10],
+            ["Leather"] = [11, 10],
+            ["Studded Leather"] = [12, 10],
+            ["Hide"] = [12, 2],
+            ["Chain Shirt"] = [13, 2],
+            ["Scale mail"] = [14, 2],
+            ["Breastplate"] = [14, 2],
+            ["Half plate"] = [15, 2],
+            ["Ring mail"] = [14, 0],
+            ["Chain mail"] = [16, 0],
+            ["Splint"] = [17, 0],
+            ["Plate"] = [18, 0]
+        };
+        int count = 1;
+        Console.WriteLine();
+        foreach(KeyValuePair<string, List<int>> armor in armorList)
+        {
+            Console.WriteLine($"{count}. {armor.Key}");
+            count++;
+        }
+        Console.WriteLine("Choose a number: ");
+        int armorIndex = int.Parse(Console.ReadLine()) - 1;
+        int currentIndex = 0;
+        KeyValuePair<string, List<int>> selectedArmor = new("No armor", [10, 10]);
+        foreach(KeyValuePair<string, List<int>> armor in armorList)
+        {
+            if (currentIndex == armorIndex)
+            {
+                selectedArmor = armor;
+                Console.WriteLine(armor.Key);
+                break;
+            }
+            currentIndex++;
+        }
+        return selectedArmor;
+        
+    }
 }

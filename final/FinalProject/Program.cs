@@ -16,7 +16,7 @@ class Program
         Item item = new("Cool Hat", 1);
         testBarbarian.AddItem(item);
         characterList.AddCharacter(testBarbarian); 
-
+        Console.WriteLine(testBarbarian.ChooseArmorType().Value[0]);
         Menu menu = new();
         string userSelection;
         do
