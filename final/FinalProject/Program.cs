@@ -75,7 +75,11 @@ class Program
                     characterList.UpdateCharacterInventory(int.Parse(userSelection)-1, selectedItem, selectedQuantity);
                     break;
                 case "5": // Deal damage to or heal a character
-
+                    Console.Clear();
+                    userSelection = characterList.DisplayNames();
+                    Console.WriteLine("How much damage?");
+                    int damage = int.Parse(Console.ReadLine());
+                    characterList.DamageCharacter(int.Parse(userSelection)-1, damage);
                     break;
                 case "6": // Quit
                     Console.WriteLine("Have a good day!");

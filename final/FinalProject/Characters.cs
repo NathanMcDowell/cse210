@@ -88,4 +88,8 @@ class Characters
             character.GetInventory().Add(newItem);
         }
     }
+    public void DamageCharacter(int index, int damage)
+    {
+        _characterList[index].DealDamage(damage);
+    }
 }
